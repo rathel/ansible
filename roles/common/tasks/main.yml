@@ -1,0 +1,12 @@
+- name: Debian Update
+  import_tasks: debianupdate.yml
+  when: ansible_distribution == 'Debian'
+  become: yes
+- name: Opensuse Update
+  import_tasks: suseupdate.yml
+  when: ansible_os_family == 'Suse'
+  become: yes
+- name: Pacman update
+  import_tasks: pacmanupdate.yml
+  when: ansible_distribution == 'Archlinux'
+  become: yes

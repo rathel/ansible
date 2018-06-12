@@ -1,0 +1,11 @@
+- apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+      - nginx
+      - vim
+      - samba
+      - zsh
+      - tmux
+      - ntfs-3g
+  become: yes
