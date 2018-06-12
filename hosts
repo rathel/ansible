@@ -20,7 +20,7 @@ debian
 phone
 
 [opensuse]
-localhost ansible_connection=local ansible_become_pass=linkin
+localhost ansible_connection=local ansible_become_pass=
 
 [rpi:vars]
 ansible_user=pi
