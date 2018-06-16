@@ -1,3 +1,15 @@
-- copy:
-     src: ~/.vimrc
+- name: vimrc_rpi
+  vars:
+      bindings_vim: /usr/local/lib/python3.5/dist-packages/powerline/vim
+  template:
+     src: vimrc.j2
      dest: "{{ ansible_env.HOME }}/.vimrc"
+  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == "9")
+
+- name: vimrc_rpi
+  vars:
+      bindings_vim: /usr/local/lib/python3.6/dist-packages/powerline/vim
+  template:
+     src: vimrc.j2
+     dest: "{{ ansible_env.HOME }}/.vimrc"
+  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == "buster/sid")
