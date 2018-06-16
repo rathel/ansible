@@ -1,6 +1,6 @@
 - name: vimrc_rpi
   vars:
-      bindings_vim: /usr/local/lib/python3.5/dist-packages/powerline/bindings/vim
+      bindings_vim: /usr/lib/python3/dist-packages/powerline/bindings/vim
   template:
      src: vimrc.j2
      dest: "{{ ansible_env.HOME }}/.vimrc"
