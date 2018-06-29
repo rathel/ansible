@@ -1,0 +1,12 @@
+- lineinfile:
+        path: /etc/apt/sources.list
+        line: https://download.zerotier.com/debian/stretch stretch main
+
+- apt_key:
+    url: https://download.zerotier.com/contact%40zerotier.com.gpg
+    state: present
+
+- apt:
+    update_cache: yes
+    name: zerotier-one
+    state: present 

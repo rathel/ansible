@@ -6,3 +6,7 @@
 - hosts: others
   roles:
     - vimrccopy
+
+- hosts: stretch
+  roles: 
+    - zerotier
