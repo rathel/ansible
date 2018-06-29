@@ -1,6 +1,9 @@
 - lineinfile:
         path: /etc/apt/sources.list
         line: https://download.zerotier.com/debian/stretch stretch main
+        when: 
+        - ansible_distribution == "Debian"
+        - ansible_distribution_release == "Stretch"
         become: yes
 
 - apt_key:
