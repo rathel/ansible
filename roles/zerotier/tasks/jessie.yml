@@ -1,6 +1,6 @@
 - lineinfile:
         path: /etc/apt/sources.list
-        line: https://download.zerotier.com/debian/stretch stretch main
+        line: deb https://download.zerotier.com/debian/stretch stretch main
 
 - apt_key:
       url: https://download.zerotier.com/contact%40zerotier.com.gpg
