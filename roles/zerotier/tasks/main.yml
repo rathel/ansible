@@ -1,18 +1,7 @@
-- lineinfile:
-        path: /etc/apt/sources.list
-        line: https://download.zerotier.com/debian/stretch stretch main
-        when: 
-        - ansible_distribution == "Debian"
-        - ansible_distribution_release == "Stretch"
-        become: yes
+- name: install zerotier on stretch
+  import_tasks: jessie.yml
+  when: 
+    - ansible_distribution == "Debian"
+    - ansible_distribution_release == "stretch"
+  become: yes
 
-- apt_key:
-      url: https://download.zerotier.com/contact%40zerotier.com.gpg
-      state: present
-      become: yes
-
-- apt:
-    update_cache: yes
-    name: zerotier-one
-    state: present 
-    becone: yes
