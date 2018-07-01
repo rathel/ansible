@@ -8,5 +8,7 @@
 
 - apt:
     update_cache: yes
-    name: zerotier-one
+    name: 
+      - zerotier-one
+      - apt-transport-https
     state: present 
