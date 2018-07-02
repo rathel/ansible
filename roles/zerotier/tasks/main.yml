@@ -3,5 +3,8 @@
   when: 
     - ansible_distribution == "Debian"
     - ansible_distribution_release == "stretch"
+  notify:
+    - join network
   become: yes
+
 

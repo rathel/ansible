@@ -9,6 +9,10 @@
 - apt:
     update_cache: yes
     name: 
-      - zerotier-one
       - apt-transport-https
+      - zerotier-one
     state: present 
+
+- service:
+    name: zerotier-one
+    state: started
