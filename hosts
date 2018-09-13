@@ -17,7 +17,6 @@
 [others:children]
 rpi
 debian
-phone
 
 [archlinux]
 localhost ansible_connection=local 

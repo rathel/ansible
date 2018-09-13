@@ -2,3 +2,4 @@ sshcopy.sh
 site.retry
 host_vars/localhost
 roles/zerotier/handlers/main.yml
+roles/zerotier/handlers/join.yml

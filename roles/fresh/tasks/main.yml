@@ -12,7 +12,3 @@
       - iptables
       - mosh
   become: yes
-- apt:
-    name: sahara
-    state: absent
-  become: yes
