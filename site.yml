@@ -1,15 +1,14 @@
 ---
-- name: install zerotier 
-  hosts: all
-  roles: 
-    - zerotier
+#- name: install zerotier 
+#  hosts: all
+#  roles: 
+#    - zerotier
+
+- hosts: others
+  roles:
+    - fresh
 
 - hosts: all
   roles:
     - common
-
-- hosts: others
-  roles:
     - vimrccopy
-
-

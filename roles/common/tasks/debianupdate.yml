@@ -1,4 +1,5 @@
 - apt: 
+    autoclean: yes
     update_cache: yes
     upgrade: dist
     autoremove: yes

@@ -1,0 +1,3 @@
+- name: restart system
+  command: systemctl reboot
+  become: yes

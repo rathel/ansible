@@ -1,6 +1,8 @@
 - name: Debian Update
   import_tasks: debianupdate.yml
   when: ansible_distribution == 'Debian'
+  notify:
+      - restart system
   become: yes
 - name: Opensuse Update
   import_tasks: suseupdate.yml

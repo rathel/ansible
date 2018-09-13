@@ -1,24 +1,9 @@
-- name: vimrc_rpi
-  vars:
-      bindings_vim: /usr/lib/python3/dist-packages/powerline/bindings/vim
-  template:
-     src: vimrc.j2
-     dest: "{{ ansible_env.HOME }}/.vimrc"
-  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == "9")
+- name: git Checkout vundle
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git' 
+    dest: "{{ ansible_env.HOME }}/.vim/bundle/Vundle.vim"
 
-- name: vimrc_rpi
-  vars:
-      bindings_vim: /usr/local/lib/python3.6/dist-packages/powerline/bindings/vim
-  template:
-     src: vimrc.j2
-     dest: "{{ ansible_env.HOME }}/.vimrc"
-  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == "buster/sid")
-
-- name: vimrc_rpi
-  vars:
-      bindings_vim: /data/data/com.termux/files/usr/lib/python3.6/site-packages/powerline/bindings/vim
-  template:
-     src: vimrc.j2
-     dest: "{{ ansible_env.HOME }}/.vimrc"
-  when: (ansible_distribution == "NA")
-
+- name: Copy VIMRC
+  copy:
+    src: vimrc
+    dest: "{{ ansible_env.HOME }}/.vimrc"
