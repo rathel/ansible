@@ -1,8 +1,8 @@
 ---
-#- name: install zerotier 
-#  hosts: all
-#  roles: 
-#    - zerotier
+- name: install zerotier 
+  hosts: all
+  roles: 
+    - zerotier
 
 - hosts: others
   roles:

@@ -11,4 +11,5 @@
       - openvpn
       - iptables
       - mosh
+      - git
   become: yes

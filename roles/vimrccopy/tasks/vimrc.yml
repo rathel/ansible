@@ -7,3 +7,5 @@
   copy:
     src: vimrc
     dest: "{{ ansible_env.HOME }}/.vimrc"
+  notify:
+    - loadplugins
