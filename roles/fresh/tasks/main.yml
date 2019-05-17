@@ -1,15 +1,16 @@
 - apt:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-      - nginx
-      - vim
-      - samba
-      - zsh
-      - tmux
-      - ntfs-3g
-      - openvpn
-      - iptables
-      - mosh
-      - git
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - nginx
+    - vim-nox
+    - samba
+    - zsh
+    - tmux
+    - ntfs-3g
+    - openvpn
+    - iptables
+    - mosh
+    - git
+    - byobu
   become: yes

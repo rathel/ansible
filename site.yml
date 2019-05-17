@@ -1,14 +1,21 @@
 ---
-- name: install zerotier 
-  hosts: all
-  roles: 
-    - zerotier
+#- name: install zerotier 
+#  hosts: all
+#  roles: 
+#    - zerotier
 
-- hosts: others
-  roles:
-    - fresh
+#- hosts: others
+#  roles:
+#    - fresh
 
 - hosts: all
+  order: sorted
   roles:
     - common
     - vimrccopy
+- hosts: slaves
+  roles:
+    - k3s
+- hosts: debian,rpi,ubuntu
+  roles:
+    - fresh

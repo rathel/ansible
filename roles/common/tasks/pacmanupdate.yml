@@ -1,3 +1,8 @@
 - pacman:
     update_cache: yes
     upgrade: yes
+  become: yes
+
+- aur:
+    upgrade: yes
+    use: yay

@@ -1,0 +1,4 @@
+- command: pkg update -y
+  register: command_result
+- debug:
+    var: command_result.stdout_lines

@@ -1,5 +1,15 @@
 - apt: 
     autoclean: yes
     update_cache: yes
+    cache_valid_time: 3600
     upgrade: dist
     autoremove: yes
+    
+- name: Check Reboot
+  register: file
+  stat: path=/var/run/reboot-required get_md5=no
+
+- name: Reboot
+  command: /sbin/reboot
+  when: file.stat.exists == true
+  become: yes

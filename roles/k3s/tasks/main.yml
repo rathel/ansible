@@ -1,0 +1,6 @@
+#- copy:
+#    src: k3ssetup.sh
+#    dest: /tmp/k3ssetup.sh
+#    mode: u=rwx,g=rwx,o=rwx
+- name: running k3ssetup.sh
+  script: k3ssetup.sh
